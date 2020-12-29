@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/todo/static/css/main.5af1dd9f.chunk.css",
+    "main.js": "/todo/static/js/main.f3555dae.chunk.js",
+    "main.js.map": "/todo/static/js/main.f3555dae.chunk.js.map",
+    "runtime-main.js": "/todo/static/js/runtime-main.53aae2fd.js",
+    "runtime-main.js.map": "/todo/static/js/runtime-main.53aae2fd.js.map",
+    "static/js/2.edb56dd1.chunk.js": "/todo/static/js/2.edb56dd1.chunk.js",
+    "static/js/2.edb56dd1.chunk.js.map": "/todo/static/js/2.edb56dd1.chunk.js.map",
+    "index.html": "/todo/index.html",
+    "static/css/main.5af1dd9f.chunk.css.map": "/todo/static/css/main.5af1dd9f.chunk.css.map",
+    "static/js/2.edb56dd1.chunk.js.LICENSE.txt": "/todo/static/js/2.edb56dd1.chunk.js.LICENSE.txt",
+    "static/media/bg-desktop-dark.73e47dbb.jpg": "/todo/static/media/bg-desktop-dark.73e47dbb.jpg",
+    "static/media/bg-desktop-light.3508d620.jpg": "/todo/static/media/bg-desktop-light.3508d620.jpg",
+    "static/media/icon-check.a8fb15d0.svg": "/todo/static/media/icon-check.a8fb15d0.svg",
+    "static/media/icon-cross.ee0e29a5.svg": "/todo/static/media/icon-cross.ee0e29a5.svg",
+    "static/media/icon-moon.6c03114b.svg": "/todo/static/media/icon-moon.6c03114b.svg",
+    "static/media/icon-sun.910b1f9a.svg": "/todo/static/media/icon-sun.910b1f9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53aae2fd.js",
+    "static/js/2.edb56dd1.chunk.js",
+    "static/css/main.5af1dd9f.chunk.css",
+    "static/js/main.f3555dae.chunk.js"
+  ]
+}
