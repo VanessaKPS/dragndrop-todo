@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getData = async () => {
     try {
-        const response = await axios.get('http://localhost:4000/tasks')
+        const response = await axios.get('https://hidden-castle-86710.herokuapp.com/tasks')
         return response.data
     } catch (err) {
         console.error(err)
@@ -11,7 +11,7 @@ const getData = async () => {
 
 const addNewTask = async (task, newOrder) => {
     try {
-        const response = await axios.post('http://localhost:4000/tasks', {
+        const response = await axios.post('https://hidden-castle-86710.herokuapp.com/tasks', {
             content: task,
             status: 'Active',
             order: newOrder
@@ -24,7 +24,7 @@ const addNewTask = async (task, newOrder) => {
 
 const batchDelete = async () => {
     try {
-        const response = await axios.post('http://localhost:4000/tasks/delete')
+        const response = await axios.post('https://hidden-castle-86710.herokuapp.com/tasks/delete')
         console.log(response)
     } catch (err) {
         console.error(err)
@@ -33,7 +33,7 @@ const batchDelete = async () => {
 
 const singleDelete = async (id) => {
     try {
-        const response = await axios.delete(`http://localhost:4000/tasks/${id}`)
+        const response = await axios.delete(`https://hidden-castle-86710.herokuapp.com/tasks/${id}`)
         console.log(response)
     } catch (err) {
         console.error(err)
@@ -44,7 +44,7 @@ const singleDelete = async (id) => {
 
 const changeStatus = async (id) => {
     try {
-        const response = await axios.put(`http://localhost:4000/tasks/${id}`)
+        const response = await axios.put(`https://hidden-castle-86710.herokuapp.com/tasks/${id}`)
         console.log(response)
     } catch (err) {
         console.error(err)
@@ -52,7 +52,7 @@ const changeStatus = async (id) => {
 }
 const createNewOrderedArray = async (newSavedTasks) => {
     try {
-        const response = await axios.post('http://localhost:4000/tasks/new-order', {newSavedTasks})
+        const response = await axios.post('https://hidden-castle-86710.herokuapp.com/tasks/new-order', {newSavedTasks})
         console.log(response)
     } catch (err) {
         console.error(err)
