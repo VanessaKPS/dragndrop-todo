@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+}
+.app-wrapper {
+    height: 100vh;
+    width: 100vw;
+}
+.background-img {
+    object-fit: cover;
+    width: 100vw;
+}
+
+.tasks-list-wrapper {
+    box-shadow: 3px 0px 10px hsl(233, 11%, 84%);
+}
+
+form {
+    width: 60%;
+}
+.input-text {
+    background-color: hsl(235, 24%, 19%);
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    caret-color: hsl(220, 98%, 61%);
+    color: hsl(236, 33%, 92%);
+}
+
+.light-input-text {
+    background-color: hsl(0, 0%, 98%);
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    caret-color: hsl(220, 98%, 61%);
+    color: hsl(235, 19%, 35%);
+}
+
+.cross-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    @media (min-width: 768px) {
+        right: 18px;
+    }
+}
+
+.checked-icon {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+@media (min-width: 768px) {
+    .checked-icon {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+    }
+}
+.hide {
+    display: none;
+}
+
+.drag-n-drop-info {
+    color: hsl(236, 9%, 61%);
+    margin: 2rem auto;
+    font-size: 12px;
+}
