@@ -62,13 +62,16 @@ const App = () => {
 
     const getTasks = async () => {
         setIsLoading(true)
-        const result = await getData()
-        setSavedTask(result)
+        try {
+            const result = await getData()
+            setSavedTask(result)
+            setIsLoading(false)
+        } catch (err) {
+            console.log(err)
+        }
     }
     useEffect(() => {
         getTasks()
-        console.log('useEffect is running')
-        return setIsLoading(false)
     }, [])
 
     // creation of new task and saved in savedTask array//
