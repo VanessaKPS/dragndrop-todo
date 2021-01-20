@@ -6,6 +6,7 @@ import lightBgImgDesktop from '../images/bg-desktop-light.jpg'
 import { ReactComponent as SunIcon } from '../images/icon-sun.svg'
 import { ReactComponent as MoonIcon } from '../images/icon-moon.svg'
 import CreateTask from './CreateTask'
+import Loader from './Loader'
 import TasksList from './TasksList'
 import TasksListFooter from './TasksListFooter'
 import { DragDropContext } from 'react-beautiful-dnd'
@@ -15,7 +16,7 @@ import {
     batchDelete,
     singleDelete,
     changeStatus,
-    createNewOrderedArray
+    createNewOrderedArray,
 } from './Data'
 
 //styled components//
@@ -57,27 +58,24 @@ const App = () => {
     const [savedTask, setSavedTask] = useState([])
     const [chosenFilter, setChosenFilter] = useState('')
     const [theme, setTheme] = useState('dark')
-    
+    const [isLoading, setIsLoading] = useState(false)
+
     const getTasks = async () => {
+        setIsLoading(true)
         const result = await getData()
         setSavedTask(result)
-        console.log(result)
-        
     }
     useEffect(() => {
         getTasks()
         console.log('useEffect is running')
+        return setIsLoading(false)
     }, [])
-
 
     // creation of new task and saved in savedTask array//
     const handleNewTask = async (item) => {
-        
         let orderNumber = savedTask.length
-       
 
-    
-        // const newTask = {content: item, status:'Active'} 
+        // const newTask = {content: item, status:'Active'}
         // setSavedTask(prevTasks => [...prevTasks, newTask])
         await addNewTask(item, orderNumber)
         await getTasks()
@@ -87,9 +85,9 @@ const App = () => {
     const requestFilter = (filterId) => {
         if (filterId === 'deleteCompletedFilter') {
             const clearCompleted = async () => {
-            //     setSavedTask((prevValues) => {
-            //     return prevValues.filter((task) => task.status === 'Active')
-            // })
+                //     setSavedTask((prevValues) => {
+                //     return prevValues.filter((task) => task.status === 'Active')
+                // })
                 await batchDelete()
                 await getTasks()
             }
@@ -176,13 +174,17 @@ const App = () => {
                         )}
                     </HeaderWrapper>
                     <CreateTask addTask={handleNewTask} theme={theme} />
-                    <TasksList
-                        item={savedTask}
-                        markAsCompleted={markAsDone}
-                        deleteOne={deleteOne}
-                        filter={chosenFilter}
-                        theme={theme}
-                    />
+                    {isLoading ? (
+                        <Loader />
+                    ) : (
+                        <TasksList
+                            item={savedTask}
+                            markAsCompleted={markAsDone}
+                            deleteOne={deleteOne}
+                            filter={chosenFilter}
+                            theme={theme}
+                        />
+                    )}
                     <TasksListFooter
                         tasks={savedTask}
                         filter={requestFilter}
